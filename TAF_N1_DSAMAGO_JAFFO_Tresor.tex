@@ -1,0 +1,153 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[french]{babel}
+\usepackage{helvet}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+\geometry{margin=2.5cm}
+\setlength{\headheight}{15pt}
+\renewcommand{\thesubsection}{\arabic{subsection}.}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{Résumé du cours}}
+\fancyhead[R]{\small\textbf{Théories et Pratiques de l'Investigation Numérique}}
+\fancyfoot[C]{\thepage}
+
+
+\begin{document}
+
+% Page de garde
+\begin{titlepage}
+	\begin{tabular}{p{0.42\linewidth} p{0.2\linewidth} p{0.4\linewidth}}
+		\centering
+		\begin{small}
+		\textbf{RÉPUBLIQUE DU CAMEROUN}                   \\
+		******                                            \\
+		Paix \textendash{} Travail \textendash{} Patrie   \\
+		******                                            \\
+		\textbf{UNIVERSITÉ DE YAOUNDÉ I}                  \\
+		******                                            \\
+		ÉCOLE NATIONALE SUPÉRIEURE                        \\
+		POLYTECHNIQUE DE YAOUNDÉ                          \\
+		******                                            \\
+		\textbf{DEPARTEMENT DE GENIE INFORMATIQUE}        \\
+		******
+		\end{small}
+		 &
+		\includegraphics[width = 0.8 \linewidth]{Logo/Logo_ENSPY.png}
+		 &
+		\centering
+		\begin{small}
+		\textbf{REPUBLIC OF CAMEROON}                     \\
+		******                                            \\
+		Peace \textendash{} Work \textendash{} Fatherland \\
+		******                                            \\
+		\textbf{UNIVERSITY OF YAOUNDÉ I}                  \\
+		******                                            \\
+		NATIONAL ADVANCED SCHOOL                          \\
+		ENGINEERING OF YAOUNDE                            \\
+		******                                            \\
+		\textbf {COMPUTERS ENGINEERING DEPARTMENT}        \\
+		******
+		\end{small}                                            \\
+	\end{tabular}
+	\centering
+	\vspace*{1cm}
+
+	% Titre principal
+	\framebox[\textwidth]{
+		\parbox{0.9\textwidth}{
+			\centering
+			\vspace{0.8cm}
+			\Huge\textbf{TRAVAIL À FAIRE N°2}
+			\vspace{0.8cm}
+		}
+	}
+
+	\vspace{1cm}
+
+	% Sous-titre
+	{\Large Résumé du cours}
+
+	\vspace{0.5cm}
+
+	% Titre du cours
+	{\LARGE \textbf{Théories et Pratiques de l'Investigation Numérique}}
+
+	\vspace{2cm}
+
+	% Section auteurs
+	{\large Rédigé par :}
+
+	\vspace{0.5cm}
+
+	\begin{tabular}{|>{\centering\arraybackslash}m{8cm}
+		|>{\centering\arraybackslash}m{4cm}
+		|>{\centering\arraybackslash}m{3cm}|}
+		\hline
+		\textbf{Noms \& Prénoms} & \textbf{Filière} & \textbf{Matricule} \\
+		\hline
+		DSAMAGO JAFFO Trésor     & HN -- CIN 4      & 22P036             \\
+		\hline
+	\end{tabular}
+
+	\vfill
+
+	% Encadrement
+	\begin{Large}
+		\textbf{Sous la direction de :} \\
+		M. \textbf{MINKA MI NGUIDJOI Thierry Emmanuel} \\
+	\end{Large}
+
+	\vspace{1cm}
+
+	% Année académique
+	\textbf{Année académique : 2025--2026}
+\end{titlepage}
+
+\section*{Partie 1: Fondements Philosophiques et Épistémologiques}
+\subsection{Analyse Critique du Paradoxe de la Transparence
+}
+Byung-Chul Han, dans La Société de la Transparence, analyse un paradoxe fondamental de notre époque numérique : la quête de transparence absolue entre en tension irréductible avec le droit à l’intimité et à l’opacité nécessaire à l’épanouissement humain. Pour Han, la transparence n’est pas synonyme de vérité ou de liberté, mais devient un impératif societal qui écrase la singularité, la complexité et le mystère qui fondent l’humain. La société transparente est une société de contrôle où tout doit être exposé, mesuré, optimisé, conduisant à une “violence de la transparence” qui supprime l’altérité et la confiance authentique.
+
+Ce paradoxe repose sur une illusion : croire que plus de données et de visibilité mènent nécessairement à plus de vérité et de sécurité. Or, cette transparence totale génère au contraire un brouillard informationnel, une “surcharge” où le sens se dissout. L’individu, contraint de se mettre à nu, se soumet à une auto-surveillance permanente, intériorisant les mécanismes de contrôle. La transparence devient alors un outil de pouvoir, non d’émancipation.
+\subsection{Transformation Ontologique du Numérique}
+\begin{itemize}
+	\item Pour Martin Heidegger dans Être et Temps, l’être humain (le Dasein) est un “être-au-monde” (In-der-Welt-sein). Son existence se définit par sa projection dans le futur, son souci (Sorge) et son être-jeté (Geworfenheit) dans un monde déjà-là. L’essence de l’homme n’est pas une substance fixe, mais un processus de dévoilement.
+	\item Le concept d’“être-par-la-trace”, inspiré de Derrida et adapté au cours, signifie que notre mode d’être dans le monde numérique est fondamentalement défini par les traces que nous laissons. Par exemple, Une personne poste des photos de voyage (trace d’aventure), partage des articles politiques (trace d’engagement), et est connectée à des professionnels d’un secteur (trace d’appartenance). Son “être-numérique” est littéralement constitué par cet agencement de traces. Sans elles, il n’“existe” pas sur cette plateforme.
+	\item Cette transformation ontologique bouleverse la preuve légale de trois manières fondamentales:
+	\begin{itemize}
+		\item Dématérialisation et Fragilité de la Preuve:
+		\item La Preuve comme Reconstruction d’un Être-Numérique
+		\item Enfin, le problème de l’Interprétation
+	\end{itemize}
+\end{itemize}
+\section*{Partie 2: Mathématiques de l’Investigation}
+\subsection{Calcul d’Entropie de Shannon Appliquée}
+
+\subsection{Théorie des Graphes en Investigation Criminelle}
+\subsection{Modélisation de l’Effet Papillon en Forensique}
+\section*{Partie 3: Révolution Quantique et Ses Implications}
+\subsection{Expérience de Pensée Schrödinger Adaptée}
+\subsection{Calculs sur la Sphère de Bloch}
+\subsection{Analyse du Théorème de Non-Clonage}
+\section*{Partie 4: Paradoxe de l’Authenticité Invisible}
+\subsection{Formalisation Mathématique du Paradoxe}
+\subsection{Implémentation Simplifiée ZK-NR}
+\section*{Partie 5: Intégration et Synthèse Avancée}
+\subsection{Étude de Cas Complexe: Affaire « QuantumLeaks »}
+\subsection{Débat Philosophique Structuré}
+\subsection{Projet de Recherche Personnel}
+
+
+\end{document}
