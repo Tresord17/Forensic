@@ -1,0 +1,369 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[french]{babel}
+\usepackage{helvet}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+\geometry{margin=2.5cm}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{Résumé des notes des exposés}}
+\fancyhead[R]{\small\textbf{Théories et Pratiques de l'Investigation Numérique}}
+\fancyfoot[C]{\thepage}
+
+
+\begin{document}
+
+% Page de garde
+\begin{titlepage}
+	\begin{tabular}{p{0.42\linewidth} p{0.2\linewidth} p{0.4\linewidth}}
+		\centering
+		\begin{small}
+		\textbf{RÉPUBLIQUE DU CAMEROUN}                   \\
+		******                                            \\
+		Paix \textendash{} Travail \textendash{} Patrie   \\
+		******                                            \\
+		\textbf{UNIVERSITÉ DE YAOUNDÉ I}                  \\
+		******                                            \\
+		ÉCOLE NATIONALE SUPÉRIEURE                        \\
+		POLYTECHNIQUE DE YAOUNDÉ                          \\
+		******                                            \\
+		\textbf{DEPARTEMENT DE GENIE INFORMATIQUE}        \\
+		******
+		\end{small}
+		 &
+		\includegraphics[width = 0.8 \linewidth]{Logo/Logo_ENSPY.png}
+		 &
+		\centering
+		\begin{small}
+		\textbf{REPUBLIC OF CAMEROON}                     \\
+		******                                            \\
+		Peace \textendash{} Work \textendash{} Fatherland \\
+		******                                            \\
+		\textbf{UNIVERSITY OF YAOUNDÉ I}                  \\
+		******                                            \\
+		NATIONAL ADVANCED SCHOOL                          \\
+		ENGINEERING OF YAOUNDE                            \\
+		******                                            \\
+		\textbf {COMPUTERS ENGINEERING DEPARTMENT}        \\
+		******
+		\end{small}                                            \\
+	\end{tabular}
+	\centering
+	\vspace*{1cm}
+
+	% Titre principal
+	\framebox[\textwidth]{
+		\parbox{0.9\textwidth}{
+			\centering
+			\vspace{0.8cm}
+			\Huge\textbf{TRAVAIL À FAIRE N°4}
+			\vspace{0.8cm}
+		}
+	}
+
+	\vspace{1cm}
+
+	% Sous-titre
+	{\Large Exercices du chapitre 2}
+
+	\vspace{0.5cm}
+
+	% Titre du cours
+	{\LARGE \textbf{Théories et Pratiques de l'Investigation Numérique}}
+
+	\vspace{2cm}
+
+	% Section auteurs
+	{\large Rédigé par :}
+
+	\vspace{0.5cm}
+
+	\begin{tabular}{|>{\centering\arraybackslash}m{8cm}
+		|>{\centering\arraybackslash}m{4cm}
+		|>{\centering\arraybackslash}m{3cm}|}
+		\hline
+		\textbf{Noms \& Prénoms} & \textbf{Filière} & \textbf{Matricule} \\
+		\hline
+		DSAMAGO JAFFO Trésor     & HN -- CIN 4      & 22P036             \\
+		\hline
+	\end{tabular}
+
+	\vfill
+
+	% Encadrement
+	\begin{Large}
+		\textbf{Sous la direction de :} \\
+		M. \textbf{MINKA MI NGUIDJOI Thierry Emmanuel} \\
+	\end{Large}
+
+	\vspace{1cm}
+
+	% Année académique
+	\textbf{Année académique : 2025--2026}
+\end{titlepage}
+\section*{Partie 1 : Analyse Historique et Épistémologique}
+
+\subsection*{Exercice 1 : Analyse Comparative des Régimes de Vérité}
+
+\subsubsection*{Choix des périodes : 1990-2000 vs 2010-2020}
+
+\textbf{Vecteurs de dominance :}
+
+\begin{itemize}
+\item \textbf{Période 1990-2000} : \(\vec{R} = (0.3, 0.4, 0.1, 0.2)\)
+  \begin{itemize}
+  \item Dominance juridique (\(\alpha_J = 0.4\)) : Création de cadres légaux (CFAA, etc.)
+  \item Technique (\(\alpha_T = 0.3\)) : Internet émergent
+  \item Pratique (\(\alpha_P = 0.2\)) : Standardisation des méthodes
+  \item Social (\(\alpha_S = 0.1\)) : Élite technique
+  \end{itemize}
+  
+\item \textbf{Période 2010-2020} : \(\vec{R} = (0.4, 0.2, 0.2, 0.2)\)
+  \begin{itemize}
+  \item Dominance technique (\(\alpha_T = 0.4\)) : Big Data, Cloud, IA
+  \item Équilibre relatif des autres dimensions
+  \end{itemize}
+\end{itemize}
+
+\subsubsection*{Discontinuités épistémologiques (Foucault)}
+
+\begin{itemize}
+\item \textbf{1990-2000} : Passage de l'artisanat à la profession
+\item \textbf{2010-2020} : Passage de l'humain à l'algorithmique
+\end{itemize}
+
+\subsubsection*{Explication sociotechnique}
+
+La transition fut \textbf{revolutionnaire} car elle a impliqué un changement de paradigme épistémique : la vérité n'est plus établie principalement par des experts humains mais par des systèmes algorithmiques.
+
+\subsection*{Exercice 2 : Étude de Cas Archéologique Foucaldienne}
+
+\subsubsection*{Analyse de l'affaire Enron (2001) comme formation discursive}
+
+\textbf{Contexte du « dicible » et « pensable » en 2001 :}
+
+\begin{itemize}
+\item \textbf{Dicible} : « preuve électronique », « email comme evidence », « analyse de données structurées »
+\item \textbf{Impossible à énoncer} : « intelligence artificielle », « blockchain », « preuve algorithmique auto-validante »
+\item \textbf{Pensable} : La vérification humaine comme garante ultime de la vérité
+\item \textbf{Impensable} : Que des algorithmes puissent établir des vérités juridiques sans supervision humaine
+\end{itemize}
+
+\textbf{Régime de vérité en action :}
+
+\[
+P_{algo} = \mathcal{A}(\mathcal{D}) \in \mathcal{P}_{légitime} \quad si\ \mathcal{V}(\mathcal{A}) > \theta
+\]
+
+\begin{itemize}
+\item \textbf{Autorité épistémique} : Expert technique + Tribunal
+\item \textbf{Preuve paradigmatique} : Document électronique avec métadonnées
+\item \textbf{Institutions légitimes} : Cours de justice, firmes d'audit
+\end{itemize}
+
+\subsubsection*{Comparaison avec une affaire contemporaine : SolarWinds (2020)}
+
+\textbf{Évolution du régime :}
+\begin{itemize}
+\item \textbf{Preuve} : Analyse comportementale IA vs documents électroniques
+\item \textbf{Autorité} : Algorithmes d'IA vs experts humains
+\item \textbf{Validation} : Apprentissage automatique vs procédures standards
+\end{itemize}
+
+\subsection*{Partie 2 : Modélisation Mathématique et Prospective}
+
+\subsection*{Exercice 3 : Modélisation de l'Évolution des Régimes}
+
+\subsubsection*{Modèle mathématique d'évolution}
+
+Soit l'équation de transition :
+\[
+\vec{R}_{t+1} = F(\vec{R}_t, \Delta Tech_t, \Delta Legal_t, \mathcal{I}_t)
+\]
+
+Avec :
+\begin{align*}
+F(\vec{R}_t, \Delta Tech_t, \Delta Legal_t, \mathcal{I}_t) &= \vec{R}_t + \alpha \cdot \Delta Tech_t \cdot \vec{T} + \beta \cdot \Delta Legal_t \cdot \vec{J} \\
+&\quad + \gamma \cdot \mathcal{I}_t \cdot \vec{S} + \delta \cdot \nabla P_t
+\end{align*}
+
+Où :
+\begin{itemize}
+\item $\vec{T} = (1, 0, 0, 0)$ : vecteur unitaire technologique
+\item $\vec{J} = (0, 1, 0, 0)$ : vecteur unitaire juridique
+\item $\vec{S} = (0, 0, 1, 0)$ : vecteur unitaire social
+\item $\nabla P_t$ : gradient des pratiques professionnelles
+\end{itemize}
+
+\subsubsection*{Simulation de transition 2010 → 2020}
+
+Données empiriques :
+\begin{align*}
+\Delta Tech_{2010} &= 0.8 \quad \text{(Big Data, Cloud, IA)} \\
+\Delta Legal_{2010} &= 0.3 \quad \text{(RGPD, lois cybersécurité)} \\
+\mathcal{I}_{2010} &= 0.6 \quad \text{(Snowden, Cambridge Analytica)} \\
+\nabla P_{2010} &= (0.1, 0.1, 0.2, 0.6)
+\end{align*}
+
+Application :
+\[
+\vec{R}_{2020} = (0.3, 0.4, 0.1, 0.2) + 0.8 \cdot (1,0,0,0) + 0.3 \cdot (0,1,0,0) + 0.6 \cdot (0,0,1,0) + (0.1, 0.1, 0.2, 0.6)
+\]
+
+\subsection*{Exercice 4 : Vérification de l'Accélération Technologique}
+
+\subsubsection*{Dates des changements de régime}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lll}
+\toprule
+Transition & Période & Durée (années) \\
+\midrule
+R1 → R2 & 1990-2000 & 10 \\
+R2 → R3 & 2000-2010 & 10 \\
+R3 → R4 & 2010-2020 & 10 \\
+R4 → R5 & 2020-2025 & 5 \\
+\bottomrule
+\end{tabular}
+\caption{Durées des transitions entre régimes}
+\end{table}
+
+\subsubsection*{Vérification de la loi d'accélération}
+
+Équation : $\Delta t_{n+1} = k \cdot \Delta t_n$
+
+Avec les données :
+\begin{align*}
+\Delta t_2 &= k \cdot \Delta t_1 \Rightarrow 10 = k \cdot 10 \Rightarrow k = 1 \\
+\Delta t_3 &= k \cdot \Delta t_2 \Rightarrow 10 = k \cdot 10 \Rightarrow k = 1 \\
+\Delta t_4 &= k \cdot \Delta t_3 \Rightarrow 5 = k \cdot 10 \Rightarrow k = 0.5
+\end{align*}
+
+\textbf{Conclusion :} L'accélération est significative à partir de 2020 ($k = 0.5$).
+
+\subsection*{Exercice 5 : Analyse du Trilemme CRO Historique}
+
+\subsubsection*{Scores CRO par période}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lccc}
+\toprule
+Période & Confidentialité (C) & Fiabilité (R) & Opposabilité (O) \\
+\midrule
+1970-1990 & 0.8 & 0.4 & 0.3 \\
+1990-2000 & 0.6 & 0.7 & 0.6 \\
+2000-2010 & 0.4 & 0.8 & 0.8 \\
+2010-2020 & 0.3 & 0.9 & 0.7 \\
+2020-... & 0.2 & 0.95 & 0.6 \\
+\bottomrule
+\end{tabular}
+\caption{Évolution historique du trilemme CRO}
+\end{table}
+
+\subsubsection*{Équation du trilemme}
+
+
+Preuve par l'absurde :
+\begin{itemize}
+\item Confidentialité parfaite ($C=1$) implique impossibilité de vérification externe
+\item Contredit l'opposabilité parfaite ($O=1$) qui nécessite transparence
+\item Donc $\neg(C=1 \land O=1)$
+\end{itemize}
+
+\section*{Partie 3 : Investigation Historique Appliquée}
+
+\subsection*{Exercice 6 : Reconstruction Archéologique d'Investigation}
+
+\subsubsection*{Affaire Kevin Mitnick (1995) - Reconstruction historique}
+
+\textbf{Outils et méthodes de 1995 :}
+\begin{itemize}
+\item Analyse manuelle des logs système
+\item Traçage IP basique
+\item Méthodes artisanales de préservation
+\item Expertise individuelle prédominante
+\end{itemize}
+
+\textbf{Régime de vérité 1995 :}
+\begin{itemize}
+\item Preuve : Logs systèmes, traces réseau
+\item Autorité : Expert technique reconnu
+\item Validation : Réputation personnelle
+\end{itemize}
+
+\subsubsection*{Réanalyse avec outils modernes}
+
+\textbf{Approche contemporaine :}
+\begin{itemize}
+\item Analyse automatique des métadonnées
+\item Corrélation multi-sources
+\item Chaine de custody numérique automatisée
+\item Validation cryptographique
+\end{itemize}
+
+\textbf{Comparaison des régimes :}
+\begin{itemize}
+\item 1995 : Vérité par expertise humaine
+\item 2024 : Vérité par validation algorithmique
+\end{itemize}
+
+\subsection*{Exercice 7 : Projet de Recherche Archéologique}
+
+\subsubsection*{« Trou » identifié : Transition 2008-2012}
+
+\textbf{Hypothèse :} La crise financière de 2008 a accéléré l'adoption des méthodes d'investigation numérique dans le secteur financier.
+
+\textbf{Sources primaires :}
+\begin{itemize}
+\item RFC sur les standards de sécurité (2008-2012)
+\item Publications du NIST post-2008
+\item Rapports d'audit financier
+\end{itemize}
+
+\textbf{Méthode archéologique :}
+\begin{enumerate}
+\item Identifier les formations discursives émergentes
+\item Cartographier les réseaux d'acteurs
+\item Analyser les ruptures épistémiques
+\end{enumerate}
+
+\subsection*{Exercice 8 : Analyse Prospective des Régimes Futurs}
+
+\subsubsection*{Scénario 2030 : Régime Neuro-Digital}
+
+\textbf{Conditions de possibilité :}
+\begin{itemize}
+\item Interfaces cerveau-machine matures
+\item Standards de neuro-éthique établis
+\item Cadre juridique des preuves neurales
+\end{itemize}
+
+\textbf{Méthodologie d'investigation :}
+\begin{itemize}
+\item Analyse des patterns neuronaux
+\item Validation par corrélation neuro-comportementale
+\item Standards de préservation des traces neurales
+\end{itemize}
+
+\textbf{Défis éthiques :}
+\begin{itemize}
+\item Confidentialité des pensées
+\item Authenticité des souvenirs
+\item Consentement éclairé
+\end{itemize}
+\end{document}
