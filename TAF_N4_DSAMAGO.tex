@@ -1,0 +1,324 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[french]{babel}
+\usepackage{helvet}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{eso-pic}
+
+\geometry{margin=2.5cm}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\textbf{Réalisation de l'OSINT d'une camarade de promotion}}
+\fancyhead[R]{\footnotesize\textbf{Théories et Pratiques de l'Investigation Numérique}}
+\fancyfoot[C]{\thepage}
+
+\newcommand{\bordurepage}{
+    \begin{tikzpicture}[remember picture, overlay]
+    \draw[line width=4pt, rounded corners=10pt, color=blue!60] 
+        ($(current page.north west) + (1.5cm,-1.5cm)$) 
+        rectangle 
+        ($(current page.south east) + (-1.5cm,1.5cm)$);
+    \end{tikzpicture}
+}
+
+\begin{document}
+
+% Page de garde
+\begin{titlepage}
+	\bordurepage
+	\begin{tabular}{p{0.38\linewidth} p{0.2\linewidth} p{0.36\linewidth}}
+		\centering
+		\begin{footnotesize}
+		\textbf{RÉPUBLIQUE DU CAMEROUN}                   \\
+		******                                            \\
+		Paix \textendash{} Travail \textendash{} Patrie   \\
+		******                                            \\
+		\textbf{UNIVERSITÉ DE YAOUNDÉ I}                  \\
+		******                                            \\
+		ÉCOLE NATIONALE SUPÉRIEURE                        \\
+		POLYTECHNIQUE DE YAOUNDÉ                          \\
+		******                                            \\
+		\textbf{DEPARTEMENT DE GENIE INFORMATIQUE}        \\
+		******
+		\end{footnotesize}
+		 &
+		\includegraphics[width = 0.8 \linewidth]{Logo/Logo_ENSPY.png}
+		 &
+		\centering
+		\begin{footnotesize}
+		\textbf{REPUBLIC OF CAMEROON}                     \\
+		******                                            \\
+		Peace \textendash{} Work \textendash{} Fatherland \\
+		******                                            \\
+		\textbf{UNIVERSITY OF YAOUNDÉ I}                  \\
+		******                                            \\
+		NATIONAL ADVANCED SCHOOL                          \\
+		ENGINEERING OF YAOUNDE                            \\
+		******                                            \\
+		\textbf {COMPUTERS ENGINEERING DEPARTMENT}        \\
+		******
+		\end{footnotesize}                                            \\
+	\end{tabular}
+	\centering
+	\vspace*{1cm}
+
+	% Titre principal
+	\framebox[\textwidth]{
+		\parbox{0.9\textwidth}{
+			\centering
+			\vspace{0.8cm}
+			\Huge\textbf{TRAVAIL À FAIRE N°4}
+			\vspace{0.8cm}
+		}
+	}
+
+	\vspace{1cm}
+
+	% Sous-titre
+	{\Large Réalisation de l'OSINT d'une camarade de promotion}
+
+	\vspace{0.5cm}
+
+	% Titre du cours
+	{\LARGE \textbf{Théories et Pratiques de l'Investigation Numérique}}
+
+	\vspace{2cm}
+
+	% Section auteurs
+	{\large Rédigé par :}
+
+	\vspace{0.5cm}
+
+	\begin{tabular}{|>{\centering\arraybackslash}m{8cm}
+		|>{\centering\arraybackslash}m{4cm}
+		|>{\centering\arraybackslash}m{3cm}|}
+		\hline
+		\textbf{Noms \& Prénoms} & \textbf{Filière} & \textbf{Matricule} \\
+		\hline
+		DSAMAGO JAFFO Trésor     & HN -- CIN 4      & 22P036             \\
+		\hline
+	\end{tabular}
+
+	\vfill
+
+	% Encadrement
+	\begin{Large}
+		\textbf{Sous la direction de :} \\
+		M. \textbf{MINKA MI NGUIDJOI Thierry Emmanuel} \\
+	\end{Large}
+
+	\vspace{1cm}
+
+	% Année académique
+	\textbf{Année académique : 2025--2026}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\addcontentsline{toc}{section}{INTRODUCTION}
+\section*{INTRODUCTION}
+
+Dans le cadre du cours \textbf{Théories et Pratiques de l'Investigation Numérique}, nous avons été amenés à réaliser un exercice pratique d'\textbf{OSINT (Open Source Intelligence)} visant à retracer l'empreinte numérique d'une camarade de promotion du nom de \textbf{NGUEMO VOUFO AURELLE SANDRA}. Cet exercice s'inscrit dans une démarche pédagogique visant à appliquer les méthodes investigatives présentées dans le support de cours, tout en respectant un cadre éthique et légal strict.
+
+L'objectif de ce rapport est de présenter une analyse structurée et reproductible de la présence en ligne de cette personne, en mobilisant les concepts foucaldiens de « régime de vérité » et les outils techniques abordés dans le cours. Nous partirons des informations déjà connues dans le contexte académique, détaillerons la méthodologie employée pour recueillir des données en sources ouvertes, exposerons les résultats obtenus, et procéderons enfin à une analyse comparative entre les informations initiales et celles déduites de l'enquête numérique.
+
+Cette démarche s'appuie notamment sur le \textbf{Trilemme CRO (Confidentialité, Fiabilité, Opposabilité)} et les bonnes pratiques issues des normes \textbf{ISO 27037 et 27043}, afin d'assurer la pertinence, l'intégrité et la traçabilité des preuves recueillies.
+
+\newpage
+\section{Rappel Méthodologique OSINT et Application au Cas}
+
+\subsection{Rappel des Principes OSINT pour cette Investigation}
+
+Pour cette investigation concernant \textbf{NGUEMO VOUFO AURELLE SANDRA}, nous appliquons une démarche OSINT structurée selon les principes fondamentaux du support de cours :
+
+\begin{itemize}
+    \item \textbf{Source ouverte exclusive} : Utilisation uniquement de données librement accessibles
+    \item \textbf{Respect du cadre légal} : Conformité RGPD et conditions d'utilisation
+    \item \textbf{Documentation systématique} : Traçabilité complète des recherches
+    \item \textbf{Approche éthique} : Respect de la vie privée et finalité pédagogique
+\end{itemize}
+
+\subsection{Méthodologie Appliquée au Cas}
+
+Pour l'investigation de notre camarade, nous suivons la méthode START adaptée :
+
+\subsubsection{Scope (Périmètre)}
+\begin{itemize}
+    \item Cible : NGUEMO VOUFO Aurelle Sandra
+    \item Objectif : Établir son empreinte numérique professionnelle
+    \item Limites : Données publiques uniquement, cadre académique
+\end{itemize}
+
+\subsubsection{Tools (Outils)}
+\begin{itemize}
+    \item Navigateur Brave pour la protection de la vie privée
+    \item Moteur Google pour la recherche web
+    \item LinkedIn pour le profil professionnel
+    \item Perplexity IA pour l'analyse consolidée
+\end{itemize}
+
+\subsubsection{Acquisition (Collecte)}
+\begin{itemize}
+    \item Recherche du nom complet sur les moteurs de recherche
+    \item Investigation du profil LinkedIn
+    \item Vérification de l'absence d'autres profils publics
+    \item Consultation des sources académiques disponibles
+\end{itemize}
+
+\subsubsection{Review (Analyse)}
+\begin{itemize}
+    \item Croisement des informations obtenues
+    \item Vérification de la cohérence des données
+    \item Évaluation de la fiabilité des sources
+    \item Application du trilemme CRO
+\end{itemize}
+
+\subsubsection{Test (Validation)}
+\begin{itemize}
+    \item Validation des informations par recoupement
+    \item Vérification de l'actualité des données
+    \item Documentation des preuves collectées
+\end{itemize}
+
+\subsection{Application du Trilemme CRO au Cas}
+
+Notre investigation s'appuie sur le framework CRO présenté dans le support de cours :
+
+\subsubsection{Confidentialité}
+\begin{itemize}
+    \item Respect strict de la vie privée de la camarade
+    \item Utilisation exclusive d'informations publiques
+    \item Absence de techniques intrusives ou illégales
+\end{itemize}
+
+\subsubsection{Fiabilité}
+\begin{itemize}
+    \item Vérification des sources primaires (LinkedIn officiel)
+    \item Recoupement avec les données académiques ENSPY
+    \item Évaluation critique de la cohérence temporelle
+\end{itemize}
+
+\subsubsection{Opposabilité}
+\begin{itemize}
+    \item Documentation méthodique des recherches
+    \item Capture des preuves d'écran
+    \item Respect des standards de preuve numérique
+\end{itemize}
+
+Cette approche méthodologique garantit la validité académique de notre investigation tout en respectant les principes déontologiques du support de cours.
+
+\section{Informations initiales sur la cible}
+
+Nos recherches porteront sur notre camarade de promotion du nom de \textbf{NGUEMO VOUFO AURELLE SANDRA}. Pour l'instant, les informations que nous disposons sur elle sont les suivantes : 
+
+Elle étudie depuis septembre 2022 à l'\textbf{École Nationale Supérieure Polytechnique de Yaoundé (ENSPY)}. Comme la plupart de ses camarades de promotion, elle a commencé en première année de tronc commun dans la filière \textbf{Humanité Numérique} cursus Ingénieur, après avoir passé une année à l'Université de Yaoundé I. Présentement, elle étudie en 4\textsuperscript{ème} année de spécialité \textbf{cybersécurité et Investigation Numérique} de l'ENSPY. 
+
+Elle est reconnue comme étant très calme, avec des notes assez moyennes. Récemment, elle a accueilli une petite fille qui a été surnommée \og bébé de la promo \fg.
+
+Nous ne connaissons pas grand-chose de son passé, qu'il soit académique ou social. Et nous espérons en savoir plus après nos différentes recherches.
+
+\section{Phase de collecte des données}
+
+Pour réaliser notre mission, nous avons utilisé comme principaux outils : le navigateur web Brave, le moteur de recherche Google, le réseau social LinkedIn et une intelligence artificielle de recherche du nom de \textbf{Perplexity IA}.
+
+\subsection{Le navigateur web Brave}
+
+Brave est un navigateur web open source gratuit disponible sur Windows, macOS et Linux ainsi que sur iOS et Android. Il a pour objectif de protéger la vie privée de ses utilisateurs en bloquant par défaut les pisteurs et en permettant la navigation privée via le réseau Tor. Le logiciel, fondé sur Chromium, est développé par l'entreprise Brave Software depuis 2016.
+
+Brave a été utilisé pour faire les différentes recherches web sur notre cible d'OSINT.
+
+\subsection{Moteur de recherche Google}
+
+Étant le moteur de recherche le plus utilisé dans le monde et l'un des plus référencés sur le marché, Google a été celui qui a été utilisé pour réaliser nos recherches dans le navigateur Brave.
+
+\subsection{LinkedIn}
+
+LinkedIn est le plus grand réseau social professionnel au monde, créé en 2002 et racheté par Microsoft en 2016. Il met en relation des professionnels, des entreprises et des recruteurs pour le développement de carrière, le réseautage, le recrutement et la prospection commerciale.
+
+Étant donné que notre cible possède un compte LinkedIn via le lien \textbf{\url{https://cm.linkedin.com/in/nguemo-voufo-aurelle-sandra-0a4948307}}, nous avons parcouru son profil LinkedIn via le navigateur Brave après l'avoir recherché sur Google.
+
+\subsection{Perplexity IA}
+
+Perplexity AI est un moteur de recherche et de réponse conversationnel basé sur l'IA qui fournit des réponses directes et résumées aux requêtes des utilisateurs avec des citations de sources. Contrairement aux moteurs de recherche traditionnels qui renvoient une liste de liens, Perplexity utilise des modèles de langage volumineux (LLM) et un accès web en temps réel pour synthétiser les informations en réponses faciles à comprendre.
+
+\section{Analyse des résultats}
+
+\subsection{Résultats des recherches}
+
+Après avoir effectué des recherches sur Google via le navigateur Brave en utilisant le nom complet de notre cible \textbf{NGUEMO VOUFO Aurelle Sandra}, nous avons obtenu les résultats suivants :
+
+\begin{itemize}
+	\item Un profil LinkedIn au nom de NGUEMO VOUFO Aurelle Sandra, confirmant qu'elle a étudié à l'École Nationale Supérieure Polytechnique de Yaoundé, dans la région du Centre, Cameroun. (Voir annexe 1)
+	\item Aucun autre profil public associé (Facebook, ResearchGate, Twitter, etc.) n'a été trouvé au moment de la recherche.
+	\item Aucune publication académique ou professionnelle n'a été retrouvée en lien avec ce nom.
+\end{itemize}
+
+\subsection{Résultats selon Perplexity IA}
+
+Après avoir entré le nom complet de notre cible \textbf{NGUEMO VOUFO Aurelle Sandra} dans Perplexity IA, nous avons obtenu les résultats suivants :
+
+Les recherches publiques disponibles en ligne à propos de NGUEMO VOUFO Aurelle Sandra montrent qu'il s'agit d'une étudiante camerounaise enregistrée dans plusieurs documents académiques officiels et plateformes professionnelles.
+
+\textbf{Profil académique :}
+NGUEMO VOUFO Aurelle Sandra apparaît dans des listes de résultats officielles de l'École Nationale Supérieure Polytechnique de Yaoundé (ENSPY) pour l'année 2022, dans la filière Arts Numériques et Humanités Numériques. Cette école, rattachée à l'Université de Yaoundé I, forme des ingénieurs et chercheurs dans des disciplines technologiques, notamment les sciences appliquées, l'informatique et le numérique.
+
+\textbf{Présence en ligne :}
+Un profil LinkedIn au nom de NGUEMO VOUFO Aurelle Sandra confirme qu'elle a étudié à l'École Nationale Supérieure Polytechnique de Yaoundé, dans la région du Centre, Cameroun. Aucun autre profil public associé (Facebook, ResearchGate, Twitter, etc.) n'a été trouvé au moment de la recherche.
+
+\section{Connaissances des résultats et Recommandations}
+
+\subsection{Connaissances des résultats obtenus}
+
+À la suite de l'OSINT réalisé sur NGUEMO VOUFO Aurelle Sandra, nous n'avons presque rien découvert d'autre que ce que nous ne savions déjà. Les informations découvertes sont presque les mêmes que celles évoquées plus haut sur ce que nous connaissions déjà.
+
+\subsection{Recommandations à la cible}
+
+Plusieurs recommandations peuvent être formulées pour renforcer sa sécurité numérique, confidentialité en ligne et gestion d'image professionnelle. Ces conseils sont adaptés aux étudiants et jeunes chercheurs camerounais exposés aux risques numériques contemporains.
+
+\begin{itemize}
+	\item \textbf{Renforcer sa présence professionnelle en ligne :} Il serait bénéfique qu'elle développe davantage son profil LinkedIn en y ajoutant ses projets, compétences et éventuellement des recommandations. Cela pourra faciliter sa visibilité auprès des recruteurs et professionnels du secteur numérique.
+	\item \textbf{Gérer sa visibilité et confidentialité :} Étant donné la faible empreinte numérique actuelle, elle pourrait également prendre le temps de contrôler les informations accessibles en ligne, s'assurer que ses données personnelles sensibles ne soient pas exposées, et envisager de créer un portfolio professionnel numérique qui valorise son parcours tout en protégeant sa vie privée.
+\end{itemize}
+
+\newpage
+
+\addcontentsline{toc}{section}{CONCLUSION}
+\section*{CONCLUSION}
+
+Cette investigation OSINT menée sur \textbf{NGUEMO VOUFO AURELLE SANDRA} dans le cadre pédagogique du cours \textbf{Théories et Pratiques de l'Investigation Numérique} a démontré plusieurs aspects fondamentaux de l'analyse des empreintes numériques.
+Premièrement, l'exercice a confirmé la \textbf{faible empreinte numérique} de la cible, ce qui, dans une perspective de sécurité informatique, représente un atout considérable. L'absence de traces numériques étendues limite les vecteurs d'attaque potentiels et réduit l'exposition aux risques d'ingénierie sociale. Cette situation illustre parfaitement le principe de \textbf{minimisation de la surface d'attaque} prôné dans les bonnes pratiques de cybersécurité.
+Deuxièmement, l'application rigoureuse de la méthodologie OSINT, bien que n'ayant pas révélé d'informations substantiellement nouvelles, a validé l'importance d'une \textbf{approche systématique} et documentée. Le respect du cadre éthique et légal, conformément aux principes déontologiques du support de cours, a été maintenu tout au long de l'investigation.
+
+Enfin, cette étude souligne l'importance pour les futurs professionnels de la cybersécurité de maîtriser les techniques OSINT, tant pour protéger leur propre empreinte numérique que pour comprendre les mécanismes d'investigation dans un contexte professionnel. Les recommandations formulées à l'intention de la cible s'inscrivent dans cette double perspective de \textbf{protection individuelle} et d'optimisation de la présence professionnelle.
+
+\newpage
+
+\addcontentsline{toc}{section}{RÉFÉRENCES}
+\section*{RÉFÉRENCES}
+
+\begin{itemize}
+	\item \url{https://fr.wikipedia.org/wiki/Brave_(navigateur_web)}
+	\item \url{https://cm.linkedin.com/in/nguemo-voufo-aurelle-sandra-0a4948307}
+	\item \url{https://osintfr.com/}
+	\item \url{https://fr.wikipedia.org/wiki/LinkedIn}
+	\item \url{https://guardia.school/boite-a-outils/quest-ce-que-losint.html}
+	\item Support de cours : "Théories et Pratiques de l'Investigation Numérique" - MINKA MI NGUIDJOI Thierry Emmanuel
+	\item Normes ISO 27037:2012 et ISO 27043:2015
+\end{itemize}
+
+\end{document}
