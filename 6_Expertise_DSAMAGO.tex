@@ -1,0 +1,178 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[french]{babel}
+\usepackage{helvet}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{eso-pic}
+
+\geometry{margin=2.5cm}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\textbf{Analyse de l'ordonnance de renvoie}}
+\fancyhead[R]{\footnotesize\textbf{Théories et Pratiques de l'Investigation Numérique}}
+\fancyfoot[C]{\thepage}
+
+\newcommand{\bordurepage}{
+    \begin{tikzpicture}[remember picture, overlay]
+    \draw[line width=4pt, rounded corners=10pt, color=blue!60] 
+        ($(current page.north west) + (1.5cm,-1.5cm)$) 
+        rectangle 
+        ($(current page.south east) + (-1.5cm,1.5cm)$);
+    \end{tikzpicture}
+}
+
+\begin{document}
+
+% Page de garde
+\begin{titlepage}
+	\bordurepage
+	\begin{tabular}{p{0.38\linewidth} p{0.2\linewidth} p{0.38\linewidth}}
+		\centering
+		\begin{footnotesize}
+		\textbf{RÉPUBLIQUE DU CAMEROUN}                   \\
+		******                                            \\
+		Paix \textendash{} Travail \textendash{} Patrie   \\
+		******                                            \\
+		\textbf{UNIVERSITÉ DE YAOUNDÉ I}                  \\
+		******                                            \\
+		ÉCOLE NATIONALE SUPÉRIEURE                        \\
+		POLYTECHNIQUE DE YAOUNDÉ                          \\
+		******                                            \\
+		\textbf{DEPARTEMENT DE GENIE INFORMATIQUE}        \\
+		******
+		\end{footnotesize}
+		 &
+		\centering
+		\vspace{0.5cm}
+		\includegraphics[width = 1 \linewidth]{Logo/Logo_ENSPY.png}
+		&
+		\centering
+		\begin{footnotesize}
+		\textbf{REPUBLIC OF CAMEROON}                     \\
+		******                                            \\
+		Peace \textendash{} Work \textendash{} Fatherland \\
+		******                                            \\
+		\textbf{UNIVERSITY OF YAOUNDÉ I}                  \\
+		******                                            \\
+		NATIONAL ADVANCED SCHOOL                          \\
+		ENGINEERING OF YAOUNDE                            \\
+		******                                            \\
+		\textbf {COMPUTERS ENGINEERING DEPARTMENT}        \\
+		******
+		\end{footnotesize}                                            \\
+	\end{tabular}
+	\centering
+	\vspace*{1cm}
+
+	% Titre principal
+	\noindent
+	\begin{tikzpicture}
+	\node[
+		draw=blue!60,
+		line width=4pt,
+		rounded corners=10pt,
+		inner sep=14pt,
+		text width=0.9\textwidth,
+		align=center
+	]{
+		{\Huge\bfseries TRAVAIL À FAIRE N°5}
+	};
+	\end{tikzpicture}
+
+	\vspace{1cm}
+
+	% Sous-titre
+	{\Large Analyse d'une ordonnance de renvoie : JPAB}
+
+	\vspace{0.5cm}
+
+	% Titre du cours
+	{\LARGE \textbf{Théories et Pratiques de l'Investigation Numérique}}
+
+	\vspace{2cm}
+
+	% Section auteurs
+	{\large Rédigé par :}
+
+	\vspace{0.5cm}
+
+	\begin{tabular}{|>{\centering\arraybackslash}m{8cm}
+		|>{\centering\arraybackslash}m{4cm}
+		|>{\centering\arraybackslash}m{3cm}|}
+		\hline
+		\textbf{Noms \& Prénoms} & \textbf{Filière} & \textbf{Matricule} \\
+		\hline
+		DSAMAGO JAFFO Trésor     & HN -- CIN 4      & 22P036             \\
+		\hline
+	\end{tabular}
+
+	\vfill
+
+	% Encadrement
+	\begin{Large}
+		\textbf{Sous la direction de :} \\
+		M. \textbf{MINKA MI NGUIDJOI Thierry Emmanuel} \\
+	\end{Large}
+
+	\vspace{1cm}
+
+	% Année académique
+	\textbf{Année académique : 2025--2026}
+\end{titlepage}
+
+\section*{INTRODUCTION}
+Dans ke cadre du cours de \textbf{Théories et pratique de l'investigation numérique}, il nous a été remis une ordonnance de renvoie sur l'affaire \textbf{Martinez Zogo}. Cette ordonnance révèle une affaire criminelle où les preuves traditionnelles (témoignages, aveux) sont fortement corroborées, voire contredites ou précisées, par des preuves numériques. L'expert judiciaire en investigation numérique a joué un rôle pivot en fournissant des données objectives et traçables qui ont permis d'établir la chronologie des événements et d'identifier les acteurs impliqués.
+Il nous incombera donc dans ce travail de faire un lien entre les éléments de l'ordonnance de renvoie et les pratiques d'investigation numérique enseignées dans le cadre du cours d'Investigation Numérique.
+\newpage
+
+
+\section{Les Preuves Numériques Identifiées dans l'Ordonnance}
+
+L'analyse de l'ordonnance révèle plusieurs catégories de preuves numériques déterminantes pour l'instruction. Ces éléments techniques ont fourni au juge des données objectives venant corroborer ou infirmer les déclarations des inculpés.
+
+\subsection{Investigation Téléphonique et Géolocalisation}
+
+L'exploitation des données de téléphonie mobile constitue le fondement de l'enquête numérique. L'expert a analysé les historiques de géolocalisation et de communications, permettant d'établir des cartes de déplacement précises et de mettre en évidence des co-localisations cruciales.
+
+L'étude des communications a révélé des appels significatifs, dont celui de la victime à SAVOM MARTIN peu avant l'enlèvement, et les échanges immédiats entre BIDZONGO MBEDE et AMOUGOU BELINGA après la rencontre avec Martinez Zogo.
+
+\subsection{Analyse des Terminaux Mobiles et Vidéosurveillance}.
+
+L'expertise des téléphones saisis a permis de récupérer des messages cruciaux, notamment ceux qualifiant les documents compromettants de "BOMBES", établissant ainsi clairement le mobile du crime. La transmission des fiches de localisation par WhatsApp
+
+Parallèlement, l'analyse des enregistrements de vidéosurveillance a fourni des preuves visuelles corrélées avec les données de géolocalisation. Les images ont confirmé la rencontre entre BIDZONGO MBEDE et la victime.
+
+\subsection{Investigation Financière Numérique}
+
+L'examen des données bancaires a mis en évidence des mouvements financiers suspects en relation directe avec les faits. Le retrait d'argent par SAVOM MARTIN suivie de la distribution de fonds aux membres du commando a constitué un élément circonstanciel significatif quant au financement de l'opération criminelle.
+
+\section{Impacts des Preuves Numériques sur l'Affaire}
+
+Comme impacts des preuves numériques générés sur cet affaire, on a :
+
+Premièrement, elles ont permis de \textbf{corroborer les aveux partiels} et d'\textbf{infirmer les dénégations} des suspects. Les données de géolocalisation ont notamment contredit les alibis de plusieurs inculpés, plaçant formellement TONGUE NANA, DAOUDA et LAMFU JOHNSON sur les lieux du crime au moment des faits, alors qu'ils affirmaient le contraire.
+
+Deuxièmement, ces éléments techniques ont \textbf{objectivé la chronologie des événements} et \textbf{établir des liens de complicité} entre les acteurs. L'analyse des communications a reconstitué la chaîne de commandement et mis en lumière les échanges entre les différents niveaux hiérarchiques, depuis les donneurs d'ordre jusqu'aux exécutants.
+
+Enfin, les preuves numériques ont \textbf{identifié le mobile du crime} en révélant le contenu des messages échangés concernant les documents compromettants qualifiés de "bombes". Cette découverte a établi la motivation réelle derrière l'assassinat, dépassant ainsi les simples conflits personnels allégués.
+\newpage
+
+
+\section*{CONCLUSION}
+Parvenus à la fin de notre analyse de cette ordonnance de renvoi, on constate que ce dernier est un parfait exemple de la manière dont l'investigation numérique est devenue incontournable dans la justice moderne. Elle transforme des suspicions en preuves solides et des dénégations en mensonges démontrables.
+
+\end{document}
